@@ -1,4 +1,4 @@
-TARGET := template
+TARGET := stm32l053xx
 OUTPUT_DIR := output
 SOURCES_DIR := src
 
