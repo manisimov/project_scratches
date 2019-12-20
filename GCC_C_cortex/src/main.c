@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include "sam4s.h"
-#include "system_ARMCM4.h"
+#include "system_sam4s.h"
 
 
 volatile uint32_t test_u32;
