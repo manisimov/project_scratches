@@ -72,13 +72,4 @@ clean:
 	$(S)rm $(OUTPUT_DIR)/*.map -f
 	$(S)rm $(OUTPUT_DIR)/*.elf -f
 
-
-#clean:
-#	@if exist $(OUTPUT_DIR)\objects\*.o del $(OUTPUT_DIR)\objects\*.o /F /Q
-#	@if exist $(OUTPUT_DIR)\listings\*.lst del $(OUTPUT_DIR)\listings\*.lst /F /Q
-#	@if exist $(OUTPUT_DIR)\dependencies\*.d del $(OUTPUT_DIR)\dependencies\*.d /F /Q
-#	@if exist $(OUTPUT_DIR)\*.hex del $(OUTPUT_DIR)\*.hex /F /Q
-#	@if exist $(OUTPUT_DIR)\*.map del $(OUTPUT_DIR)\*.map /F /Q
-#	@if exist $(OUTPUT_DIR)\*.elf del $(OUTPUT_DIR)\*.elf /F /Q
-
 -include $(OUTPUT_DIR)/dependencies/*.d
