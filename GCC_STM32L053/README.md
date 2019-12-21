@@ -22,6 +22,7 @@ Will work for these devices:
     /* #define STM32L083xx */ 
   
 To change used MCU:
+
     1) Uncomment correponding line in stm32l0xx.h
     2) Modify memory sizes in the linker script
     3) Update interrupt vectors in startup_stm32l053xx.S
