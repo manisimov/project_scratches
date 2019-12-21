@@ -21,4 +21,4 @@ Will work for these devices:
   /* #define STM32L082xx */ 
   /* #define STM32L083xx */ 
   
-Uncomment correponding line in stm32l0xx.h 
+Uncomment correponding line in stm32l0xx.h and modify memory sizes in the linker script.
