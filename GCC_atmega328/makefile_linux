@@ -1,42 +1,29 @@
-TARGET := stm32l053xx
+TARGET := atmega328p
 OUTPUT_DIR := output
 SOURCES_DIR := src
 
 TOOLCHAIN_DIR := 
 
-CC := arm-none-eabi-gcc
+CC := avr-gcc
 CFLAGS :=   -c\
-            -mthumb\
-            -mcpu=cortex-m0plus\
-            -mlittle-endian\
+            -mmcu=atmega328p\
             -MMD -MP\
             -g3\
-            -O1
-INCLUDE := -I$(SOURCES_DIR)/CMSIS/core/include\
-           -I$(SOURCES_DIR)/CMSIS/device/include\
-           -I$(SOURCES_DIR)/CMSIS\
-           -I$(SOURCES_DIR)
+            -Os
+INCLUDE := 
             
-LINKER  := arm-none-eabi-gcc
-LSCRIPT := $(SOURCES_DIR)/stm32l053xx.ld
-LFLAGS  :=  -T $(LSCRIPT)\
-            -mthumb\
-            -mcpu=cortex-m0plus\
-            --specs=nosys.specs\
-            --specs=nano.specs
+LINKER  := avr-gcc
+#LSCRIPT := 
+LFLAGS  :=  -mmcu=atmega328p
 
-OBJDUMP := arm-none-eabi-objdump
-OBJCOPY := arm-none-eabi-objcopy
+OBJDUMP := avr-objdump
+OBJCOPY := avr-objcopy
 
 
-OBJECTS :=  main.o\
-            startup_stm32l053xx.o\
-            system_stm32l0xx.o
+OBJECTS :=  main.o
 
 vpath %.c $(SOURCES_DIR)
-vpath %.c $(SOURCES_DIR)/CMSIS
 vpath %.S $(SOURCES_DIR)
-vpath %.S $(SOURCES_DIR)/CMSIS/device
 
 #--------------------------------------------------------
 # add path to object names
