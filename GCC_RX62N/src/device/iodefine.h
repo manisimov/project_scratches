@@ -5510,6 +5510,7 @@ struct st_system {
 	union {
 		unsigned long LONG;
 		struct {
+			unsigned long :8;
 			unsigned long PCK:4;
 			unsigned long :4;
 			unsigned long BCK:4;
