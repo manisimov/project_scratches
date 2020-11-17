@@ -56,6 +56,10 @@ $(OUTPUT_DIR)/objects/%.o : %.S makefile
 $(OUTPUT_DIR)/objects/%.o : %.c makefile
 	$(CC) $(CFLAGS) $(INCLUDE) $< -o $@ -MF $(OUTPUT_DIR)/dependencies/$*.d
 	$(S)$(OBJDUMP) -d -S $@ > $(OUTPUT_DIR)/listings/$*.lst
+	
+debug:
+	qemu-system-arm -m 256 -M raspi2 -serial stdio -kernel output/rasppi.elf -s -S &
+	gdb-multiarch -x src/start.gdb
 
 
 clean:
